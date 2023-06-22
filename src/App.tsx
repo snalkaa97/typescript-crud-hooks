@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import Table from './components/Table'
+import FormAdd from './components/FormAdd';
+import { CrudModeProvider } from './CrudProvider';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <CrudModeProvider>
+      <div className="container jumbotron">
+        <h1 className="text-center">CRUD APP Typescript</h1>
+      </div>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-6 col-md-12">
+              <Table/>
+          </div>
+          <div className="col-lg-6 col-md-12">
+              <FormAdd/>
+          </div>
+        </div>
+      </div>
+    </CrudModeProvider>
+    </>
   );
 }
 
